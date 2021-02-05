@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    background: #fafafa;
+    box-shadow: 0 0 1rem #8888;
+}
+
+.logo--small {
+    height: 4rem;
+}
+
+.logo--big {
+    width: 85vw;
+}
+
+.settings {
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchform {
+    background: red;
+
+    width: 60vw;
+}
