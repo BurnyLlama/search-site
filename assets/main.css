@@ -1,3 +1,5 @@
+@import 'scaling.css';
+
 @font-face {
     src: url('./Montserrat-Regular.ttf');
     font-family: 'Montserrat';
@@ -11,6 +13,13 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+:root {
+    --surface: #111; /* #FAFAFA */
+    --standout: #181818; /* #FFF */
+    --text: #fafafa; /* #222 */
+    --shadow: #0008; /* #6668 */
+}
+
 body {
     display: grid;
     grid-template-rows: max-content 1fr max-content;
@@ -22,9 +31,32 @@ nav {
     align-items: center;
     width: 100%;
 
-    background: #fff;
-    box-shadow: 0 0 1rem #6668;
+    background: var(--standout);
+    box-shadow: 0 0 1rem var(--shadow);
     z-index: 1;
+}
+
+button {
+    color: transparent;
+    background: linear-gradient(to right, #ff4b4b, #4b4bff);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+
+    cursor: pointer;
+
+    border: 0 transparent none;
+
+    font-size: 1rem;
+
+    padding: .75rem 1.5rem;
+
+    transition: .3s;
+}
+
+button:hover {
+    color: white;
+    background: linear-gradient(to right, #ff4b4b, #4b4bff);
 }
 
 .logo--small {
@@ -46,7 +78,7 @@ main {
     align-items: center;
     justify-content: center;
 
-    background: #fafafa;
+    background: var(--surface);
 }
 
 #searchform {
@@ -56,10 +88,17 @@ main {
     align-items: center;
 }
 
-h1 {
+#searchmsg {
     font-size: 3rem;
+    text-align: center;
+
     margin-bottom: 2rem;
-    color: #222;
+
+    color: transparent;
+    background: linear-gradient(to right, #ff4b4b, #4b4bff);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
 }
 
 #searchbox {
@@ -67,17 +106,27 @@ h1 {
     border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
     border-image-slice: 1;
 
-    box-shadow: 0 .3em 1rem #6668;
+    color: var(--text);
+    background: var(--standout);
+
+    box-shadow: 0 .3em 1rem var(--shadow);
 
     margin-bottom: 2rem;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
 
     font-size: 1.5rem;
 
     width: 65vw;
 
     outline: 0 transparent none;
-    transition: border-radius .3s, padding 0s, border 0s;
+}
+
+#searchbox:hover {
+    border: .2rem solid;
+    border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
+    border-image-slice: 1;
+
+    padding: .9rem;
 }
 
 #searchbox:focus {
@@ -85,19 +134,18 @@ h1 {
     border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
     border-image-slice: 1;
 
-    padding: .85rem 1.35rem;
+    padding: .82rem;
 }
 
 #searchbtn {
     width: min-content;
-    box-shadow: 0 .3em 1rem #6668;
+    box-shadow: 0 .3em 1rem var(--shadow);
 
-    font-size: 2rem;
+    font-size: 1.5rem;
 
-    color: #fff;
+    color: white;
     background: linear-gradient(to right, #ff4b4b, #4b4bff);
 
-    border: 0 transparent none;
     border-radius: 1rem 1rem .3rem 1rem;
 
     padding: 1rem 3rem;
@@ -113,9 +161,29 @@ h1 {
 footer {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
-    background: #fafafa;
-    box-shadow: 0 0 1rem #6668;
+    background: var(--standout);
+    box-shadow: 0 0 1rem var(--shadow);
 
     padding: 1rem 0;
+}
+
+.github {
+    color: transparent;
+    background: linear-gradient(to right, #ff4b4b, #4b4bff);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+}
+
+.github::after {
+    content: ' ';
+    display: block;
+    position: relative;
+    left: -2%;
+    bottom: 0;
+    width: 104%;
+    height: 1pt;
+    background: linear-gradient(to right, #ff4b4b, #4b4bff);
 }

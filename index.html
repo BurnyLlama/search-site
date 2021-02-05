@@ -10,37 +10,36 @@
     <nav>
         <img class="logo logo--small" src="./assets/logo.svg">
 
-        <div class="settings">
+        <button class="settings">
             SETTINGS
-        </div>
+        </button>
     </nav>
 
     <main>
-        <h1>
-            What do you want to find today?
+        <h1 id="searchmsg">
+            What do you want to search for today?
         </h1>
 
         <form id="searchform">
-            <input type="text" name="searchbox" id="searchbox" class="searchbox">
+            <input type="text" name="searchbox" id="searchbox" class="searchbox" autocomplete="off">
 
             <button id="searchbtn" type="submit">Search!</button>
         </form>
     </main>
 
     <footer>
-        <div class="about">
+        <button class="about">
             ABOUT
-        </div>
+        </button>
 
-        <div class="github">
-            <a href="https://github.com/BurnyLlama/search-site">This project is on GitHub!</a>
-        </div>
+        <a class="github" href="https://github.com/BurnyLlama/search-site">This project is on GitHub!</a>
 
-        <div class="help">
+        <button class="help">
             HELP
-        </div>
+        </button>
     </footer>
 
     <script src="./assets/search.js"></script>
+    <script src="./assets/searchmsg.js"></script>
 </body>
 </html>
