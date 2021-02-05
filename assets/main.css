@@ -1,7 +1,14 @@
+@font-face {
+    src: url('./Montserrat-Regular.ttf');
+    font-family: 'Montserrat';
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -17,6 +24,7 @@ nav {
 
     background: #fafafa;
     box-shadow: 0 0 1rem #8888;
+    z-index: 1;
 }
 
 .logo--small {
@@ -35,12 +43,20 @@ nav {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    background: #fafafa;
 }
 
 #searchform {
     background: red;
 
     width: 60vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#searchbox {
+    border: 0 transparent solid;
 }
