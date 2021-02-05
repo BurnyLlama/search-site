@@ -1,7 +1,7 @@
-# search-site
-A simple search site. (School project.)
+![Random Placeholder Logo](https://raw.githubusercontent.com/BurnyLlama/search-site/b64fce940efa8208d0b1b13b851900972fc9e455/assets/logo.svg)
+This is a search-site I made for a school project. :)
 
-# What it is?
+# What is it?
 It's a simple search page. That's it.
 
 # Features I want to implement.
