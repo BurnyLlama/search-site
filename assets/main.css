@@ -52,9 +52,11 @@ button {
     padding: .75rem 1.5rem;
 
     transition: .3s;
+
+    outline: 0 transparent none;
 }
 
-button:hover {
+button:active, button:focus, button:hover {
     color: white;
     background: linear-gradient(to right, #ff4b4b, #4b4bff);
 }
@@ -153,7 +155,7 @@ main {
     transition: .3s;
 }
 
-#searchbtn:hover {
+#searchbtn:hover, #searchbtn:focus, #searchbtn:active {
     border-radius: 1.6rem 1.6rem .6rem 1.6rem;
     cursor: pointer;
 }
