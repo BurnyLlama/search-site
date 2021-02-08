@@ -14,10 +14,14 @@
 }
 
 :root {
-    --surface: #111; /* #FAFAFA */
-    --standout: #181818; /* #FFF */
-    --text: #fafafa; /* #222 */
-    --shadow: #0008; /* #6668 */
+    --surface: #fafafa; /* #FAFAFA */
+    --standout: #fff; /* #FFF */
+    --text: #222; /* #222 */
+    --shadow: #6668; /* #6668 */
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 body {
@@ -69,7 +73,7 @@ button:active, button:focus, button:hover {
     width: 85vw;
 }
 
-.settings {
+#settings-btn {
     margin-left: auto;
     margin-right: 1rem;
 }
@@ -141,7 +145,7 @@ main {
 
 #searchbtn {
     width: min-content;
-    box-shadow: 0 .3em 1rem var(--shadow);
+    box-shadow: 0 .3rem 1rem var(--shadow);
 
     font-size: 1.5rem;
 
@@ -188,4 +192,45 @@ footer {
     width: 104%;
     height: 1pt;
     background: linear-gradient(to right, #ff4b4b, #4b4bff);
+}
+
+.panel {
+    position: fixed;
+    z-index: 3;
+
+    background: var(--standout);
+    box-shadow: 0 0 1rem var(--shadow);
+
+    top: 0;
+    width: 40vw;
+    height: 100vh;
+
+    transition: .3s;
+}
+
+.panel-left {
+    left: -50vw;
+}
+
+.panel-right {
+    left: 110vw;
+}
+
+#close-btn {
+    content: 'x';
+
+    position: absolute;
+    z-index: 4;
+
+    color: white;
+    background: linear-gradient(to right, #ff4b4b, #4b4bff);
+    border-radius: 100%;
+    box-shadow: 0 .3rem 1rem var(--shadow);
+
+    top: 3vh;
+    left: 110vw;
+    width: 5vw;
+    height: 5vw;
+
+    transition: .8s;
 }

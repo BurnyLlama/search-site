@@ -10,7 +10,7 @@
     <nav>
         <img class="logo logo--small" src="./assets/logo.svg">
 
-        <button class="settings">
+        <button id="settings-btn" class="panel-btn" direction="right">
             SETTINGS
         </button>
     </nav>
@@ -28,18 +28,25 @@
     </main>
 
     <footer>
-        <button class="about">
+        <button id="about-btn" class="panel-btn" direction="left">
             ABOUT
         </button>
 
         <a class="github" href="https://github.com/BurnyLlama/search-site">This project is on GitHub!</a>
 
-        <button class="help">
+        <button id="help-btn" class="panel-btn" direction="right">
             HELP
         </button>
     </footer>
 
+    <div class="panel panel-right" id="settings-panel" direction="right"></div>
+    <div class="panel panel-left" id="about-panel" direction="left"></div>
+    <div class="panel panel-right" id="help-panel" direction="right"></div>
+
+    <button id="close-btn">x</button>
+
     <script src="./assets/search.js"></script>
     <script src="./assets/searchmsg.js"></script>
+    <script src="./assets/panels.js"></script>
 </body>
 </html>
