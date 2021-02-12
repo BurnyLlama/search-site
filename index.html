@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav>
-        <img class="logo logo--small" src="./assets/logo.svg">
+        <img class="logo" src="./assets/logo.svg">
 
         <button id="settings-btn" class="panel-btn" direction="right">
             SETTINGS
@@ -32,21 +32,60 @@
             ABOUT
         </button>
 
-        <a class="github" href="https://github.com/BurnyLlama/search-site">This project is on GitHub!</a>
+        <a class="github" target="parent" href="https://github.com/BurnyLlama/search-site">This project is on GitHub!</a>
 
         <button id="help-btn" class="panel-btn" direction="right">
             HELP
         </button>
     </footer>
 
-    <div class="panel panel-right" id="settings-panel" direction="right"></div>
-    <div class="panel panel-left" id="about-panel" direction="left"></div>
-    <div class="panel panel-right" id="help-panel" direction="right"></div>
+    <div class="panel panel-right" id="settings-panel" direction="right">
+        <h2>
+            Theme
+        </h2>
 
-    <button id="close-btn">x</button>
+        <form action="#" id="settings-theme">
+            <input type="radio" name="theme" id="dark-theme" value="dark">
+            <label for="dark-theme">Dark Theme</label>
+
+            <input type="radio" name="theme" id="light-theme" value="light">
+            <label for="light-theme">Light Theme</label>
+        </form>
+    </div>
+
+    <div class="panel panel-left" id="about-panel" direction="left">
+        <h2>
+            About
+        </h2>
+    </div>
+
+    <div class="panel panel-right" id="help-panel" direction="right">
+        <h2>
+            Help
+        </h2>
+        <h3>
+            How do I search?
+        </h3>
+        <p>
+            Just type in a query in the search box and then just hit the search button. (Or if you're lazy, then just hit enter.)
+        </p>
+
+        <h3>Tips and tricks:</h3>
+        <p>
+            You can use a minus (-) followed by a word to exlude from your search. <br>
+            Example: If you search for "cats -movie", you'll not get the <i>Cats</i> movie as a result.
+        </p>
+        <p>
+            You can also search for a specific phrase if you put it in quotation marks (""). <br>
+            Example: "hello world" will search for results including that specific phrase.
+        </p>
+    </div>
+
+    <img id="close-btn" src="./assets/close.svg" alt="x">
 
     <script src="./assets/search.js"></script>
     <script src="./assets/searchmsg.js"></script>
     <script src="./assets/panels.js"></script>
+    <script src="./assets/settings.js"></script>
 </body>
 </html>

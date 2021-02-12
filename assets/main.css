@@ -11,13 +11,15 @@
     padding: 0;
 
     font-family: 'Montserrat', sans-serif;
+
+    color: var(--text);
 }
 
 :root {
     --surface: #fafafa; /* #FAFAFA */
     --standout: #fff; /* #FFF */
     --text: #222; /* #222 */
-    --shadow: #6668; /* #6668 */
+    --shadow: #8888; /* #6668 */
 }
 
 html, body {
@@ -65,12 +67,8 @@ button:active, button:focus, button:hover {
     background: linear-gradient(to right, #ff4b4b, #4b4bff);
 }
 
-.logo--small {
+.logo {
     height: 4rem;
-}
-
-.logo--big {
-    width: 85vw;
 }
 
 #settings-btn {
@@ -201,6 +199,9 @@ footer {
     background: var(--standout);
     box-shadow: 0 0 1rem var(--shadow);
 
+    padding: 3vw;
+    font-size: .8rem;
+
     top: 0;
     width: 40vw;
     height: 100vh;
@@ -216,21 +217,35 @@ footer {
     left: 110vw;
 }
 
-#close-btn {
-    content: 'x';
+.panel h2, .panel h3 {
+    margin: 1em 0 .5em 0;
+}
 
+.panel p {
+    margin: .5em 0;
+}
+
+#close-btn {
     position: absolute;
     z-index: 4;
 
-    color: white;
     background: linear-gradient(to right, #ff4b4b, #4b4bff);
     border-radius: 100%;
     box-shadow: 0 .3rem 1rem var(--shadow);
 
     top: 3vh;
     left: 110vw;
-    width: 5vw;
-    height: 5vw;
 
-    transition: .8s;
+    width: 4vw;
+    height: 4vw;
+
+    padding: 1vw;
+
+    transition: left .8s, transform .3s;
+}
+
+#close-btn:hover {
+    cursor: pointer;
+    transform: translateY(-.2rem);
+    transition: .3s;
 }
