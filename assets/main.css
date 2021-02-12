@@ -13,6 +13,8 @@
     font-family: 'Montserrat', sans-serif;
 
     color: var(--text);
+
+    transition: color .3s, background .3s;
 }
 
 :root {
@@ -174,22 +176,24 @@ footer {
     padding: 1rem 0;
 }
 
-.github {
+a {
     color: transparent;
     background: linear-gradient(to right, #ff4b4b, #4b4bff);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
+    display: inline-grid;
+    margin: 0 .1rem;
 }
 
-.github::after {
+a::after {
     content: ' ';
     display: block;
     position: relative;
     left: -2%;
     bottom: 0;
     width: 104%;
-    height: 1pt;
+    height: .1em;
     background: linear-gradient(to right, #ff4b4b, #4b4bff);
 }
 
@@ -253,4 +257,39 @@ footer {
 
 input[typr=radio] {
     background: #ff4b4b;
+}
+
+input[type=text] {
+    border: 0 transparent none;
+    border-bottom: .1rem solid;
+    border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
+    border-image-slice: 1;
+
+    color: var(--text);
+    background: var(--surface);
+
+    margin: 0 0 0 .5rem;
+    padding: .25rem .5rem;
+
+    width: min(80%, 20vw);
+
+    outline: 0 transparent none;
+}
+
+input[type=text]:hover {
+    border: 0 transparent none;
+    border-bottom: .15rem solid;
+    border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
+    border-image-slice: 1;
+
+    padding-bottom: .1rem;
+}
+
+input[type=text]:focus {
+    border: 0 transparent none;
+    border-bottom: .2rem solid;
+    border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
+    border-image-slice: 1;
+
+    padding-bottom: .05rem;
 }
