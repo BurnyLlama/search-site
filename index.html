@@ -45,11 +45,47 @@
         </h2>
 
         <form action="#" id="settings-theme">
-            <input type="radio" name="theme" id="dark-theme" value="dark">
-            <label for="dark-theme">Dark Theme</label>
+            <p>
+                <input type="radio" name="theme" id="light-theme" checked value="light">
+                <label for="light-theme">Light Theme</label>
+            </p>
 
-            <input type="radio" name="theme" id="light-theme" value="light">
-            <label for="light-theme">Light Theme</label>
+            <p>
+                <input type="radio" name="theme" id="dark-theme" value="dark">
+                <label for="dark-theme">Dark Theme</label>
+            </p>
+        </form>
+
+        <h2>
+            Search Engine
+        </h2>
+        <form action="#" id="settings-search-engine">
+            <p>
+                <input type="radio" name="search-engine" id="search-engine-google" checked value="google">
+                <label for="search-engine-google">Google</label>
+            </p>
+
+            <p>
+                <input type="radio" name="search-engine" id="search-engine-ddg" value="ddg">
+                <label for="search-engine-ddg">Duck Duck Go</label>
+            </p>
+
+            <p>
+                <input type="radio" name="search-engine" id="search-engine-yahoo" value="yahoo">
+                <label for="search-engine-yahoo">Yahoo</label>
+            </p>
+
+            <p>
+                <input type="radio" name="search-engine" id="search-engine-bing" value="bing">
+                <label for="search-engine-bing">Bing</label>
+            </p>
+
+            <p>
+                <input type="radio" name="search-engine" id="search-engine-custom" value="custom">
+                <label for="search-engine-custom">
+                    Custom URL: <input type="text" id="search-engine-custom-url">
+                </label>
+            </p>
         </form>
     </div>
 

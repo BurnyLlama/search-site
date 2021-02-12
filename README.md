@@ -7,7 +7,7 @@ It's a simple search page. That's it.
 # Features I want to implement.
 * [x] Basic functionality, searching using google.
 * [x] Style it up! :D
-* [ ] Ability to choose search engine. (Google, DuckDuckGo, Yahoo, etc.)
-* [ ] Ability to use a custom search engine?
+* [x] Ability to choose search engine. (Google, DuckDuckGo, Yahoo, etc.)
+* [x] Ability to use a custom search engine?
 * [x] Choose theme.
 * [ ] Save settings/themes in "local storage"?
