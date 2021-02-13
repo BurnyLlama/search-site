@@ -57,6 +57,7 @@ button {
     border-radius: .8rem .8rem .3rem .8rem;
 
     font-size: 1rem;
+    font-weight: bold;
 
     padding: .75rem 1.5rem;
 
@@ -195,6 +196,10 @@ a::after {
     width: 104%;
     height: .1em;
     background: linear-gradient(to right, #ff4b4b, #4b4bff);
+}
+
+.github {
+    font-weight: bold;
 }
 
 .panel {
