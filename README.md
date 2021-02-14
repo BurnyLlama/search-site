@@ -2,7 +2,9 @@
 This is a search-site I made for a school project. :)
 
 # What is it?
-It's a simple search page. That's it.
+It's a simple search page. That's it. You can find a live demo on [netlify](https://searchy-site.netlify.app).
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/88904d1f-08c6-4e6e-a2d5-22272c866861/deploy-status)](https://app.netlify.com/sites/searchy-site/deploys)
 
 # Features I want to implement.
 * [x] Basic functionality, searching using google.
