@@ -43,7 +43,7 @@ export default {
     loadSettings: () => {
         const settings = JSON.parse(localStorage.getItem("settings"))
 
-        if (typeof(settings) === 'undefined') return console.log("Couldn't load any settings! (There are no settings saved.)")
+        if (!typeof(settings)) return console.log("Couldn't load any settings! (There are no settings saved.)")
 
         loadTheme(settings.theme)
         document.querySelector(`#${settings.theme}-theme[name="theme"]`).checked = true
