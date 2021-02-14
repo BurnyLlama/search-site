@@ -1,25 +1,55 @@
+import { closePanel } from "./panels.js";
+
 function setvar(variable, value) {
     document.documentElement.style
         .setProperty(`--${variable}`, value)
+}
+
+function loadTheme(theme) {
+    if (theme == "light") {
+        setvar("surface", "#fafafa")
+        setvar("standout", "#fff")
+        setvar("text", "#222")
+        setvar("shadow", "#8888")
+    } else {
+        setvar("surface", "#222")
+        setvar("standout", "#282828")
+        setvar("text", "#fafafa")
+        setvar("shadow", "#000a")
+    }
 }
 
 export default {
     init: () => {
         document.querySelector("#settings-theme").addEventListener("click", event => {
             const themeSetting = document.querySelector('input[name="theme"]:checked')
-            if (!themeSetting) return console.log("Something went wrong while applying the theme.")
 
-            if (themeSetting.value == "light") {
-                setvar("surface", "#fafafa")
-                setvar("standout", "#fff")
-                setvar("text", "#222")
-                setvar("shadow", "#8888")
-            } else {
-                setvar("surface", "#222")
-                setvar("standout", "#282828")
-                setvar("text", "#fafafa")
-                setvar("shadow", "#000a")
-            }
+            loadTheme(themeSetting.value)
         })
+
+        document.querySelector("#settings-save-btn").addEventListener("click", event => {
+            const settings = {
+                theme: document.querySelector('input[name="theme"]:checked').value,
+                searchEngine: document.querySelector('input[name="search-engine"]:checked').value,
+                searchEngineCustomURL: document.querySelector("#search-engine-custom-url").value
+            }
+
+            localStorage.setItem("settings", JSON.stringify(settings))
+
+            closePanel()
+            window.location.reload()
+        })
+    },
+    loadSettings: () => {
+        const settings = JSON.parse(localStorage.getItem("settings"))
+
+        if (typeof(settings) === 'undefined') return console.log("Couldn't load any settings! (There are no settings saved.)")
+
+        loadTheme(settings.theme)
+        document.querySelector(`#${settings.theme}-theme[name="theme"]`).checked = true
+
+        document.querySelector(`#search-engine-${settings.searchEngine}[name="search-engine"]`).checked = true
+
+        document.querySelector("#search-engine-custom-url").value = settings.searchEngineCustomURL ? settings.searchEngineCustomURL : ""
     }
 }

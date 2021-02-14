@@ -134,7 +134,7 @@ main {
     border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
     border-image-slice: 1;
 
-    padding: .9rem;
+    padding: .85rem;
 }
 
 #searchbox:focus {
@@ -142,7 +142,7 @@ main {
     border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
     border-image-slice: 1;
 
-    padding: .82rem;
+    padding: .75rem;
 }
 
 #searchbtn {
@@ -260,7 +260,7 @@ a::after {
     transition: .3s;
 }
 
-input[typr=radio] {
+input[type=radio] {
     background: #ff4b4b;
 }
 
@@ -287,7 +287,7 @@ input[type=text]:hover {
     border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
     border-image-slice: 1;
 
-    padding-bottom: .1rem;
+    padding-bottom: .2rem;
 }
 
 input[type=text]:focus {
@@ -296,5 +296,9 @@ input[type=text]:focus {
     border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
     border-image-slice: 1;
 
-    padding-bottom: .05rem;
+    padding-bottom: .15rem;
+}
+
+#settings-save-btn {
+    margin-top: 1rem;
 }

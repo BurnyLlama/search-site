@@ -12,7 +12,7 @@ function openPanel (panel, direction) {
     closeBtn.setAttribute("activePanel", document.querySelector(panel).id)
 }
 
-function closePanel () {
+export function closePanel () {
     activePanel = document.querySelector(`#${closeBtn.getAttribute("activePanel")}`)
 
     if (activePanel)
