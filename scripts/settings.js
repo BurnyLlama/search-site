@@ -43,13 +43,18 @@ export default {
     loadSettings: () => {
         const settings = JSON.parse(localStorage.getItem("settings"))
 
-        if (!typeof(settings)) return console.log("Couldn't load any settings! (There are no settings saved.)")
+        console.log(settings)
 
-        if (!typeof(settings.theme)) return console.log("Couldn't load any settings! (There is no theme in the settings!)")
+        if (settings == null)
+            return console.log("Couldn't load any settings! (There are no settings saved.)")
+
+        if (settings.theme == null)
+            return console.log("Couldn't load any settings! (There is no theme in the settings!)")
         loadTheme(settings.theme)
         document.querySelector(`#${settings.theme}-theme[name="theme"]`).checked = true
 
-        if (!typeof(settings.searchEngine)) return console.log("Couldn't load any settings! (There is search engine theme in the settings!)")
+        if (settings.searchEngine == null)
+            return console.log("Couldn't load any settings! (There is search engine theme in the settings!)")
         document.querySelector(`#search-engine-${settings.searchEngine}[name="search-engine"]`).checked = true
 
         document.querySelector("#search-engine-custom-url").value = settings.searchEngineCustomURL ? settings.searchEngineCustomURL : ""
