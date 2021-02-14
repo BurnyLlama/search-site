@@ -43,8 +43,6 @@ export default {
     loadSettings: () => {
         const settings = JSON.parse(localStorage.getItem("settings"))
 
-        console.log(settings)
-
         if (settings == null)
             return console.log("Couldn't load any settings! (There are no settings saved.)")
 

@@ -12,4 +12,4 @@ It's a simple search page. That's it. You can find a live demo on [netlify](http
 * [x] Ability to choose search engine. (Google, DuckDuckGo, Yahoo, etc.)
 * [x] Ability to use a custom search engine?
 * [x] Choose theme.
-* [ ] Save settings/themes in "local storage"?
+* [x] Save settings/themes in "local storage"?
