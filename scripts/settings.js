@@ -45,9 +45,11 @@ export default {
 
         if (!typeof(settings)) return console.log("Couldn't load any settings! (There are no settings saved.)")
 
+        if (!typeof(settings.theme)) return console.log("Couldn't load any settings! (There is no theme in the settings!)")
         loadTheme(settings.theme)
         document.querySelector(`#${settings.theme}-theme[name="theme"]`).checked = true
 
+        if (!typeof(settings.searchEngine)) return console.log("Couldn't load any settings! (There is search engine theme in the settings!)")
         document.querySelector(`#search-engine-${settings.searchEngine}[name="search-engine"]`).checked = true
 
         document.querySelector("#search-engine-custom-url").value = settings.searchEngineCustomURL ? settings.searchEngineCustomURL : ""
