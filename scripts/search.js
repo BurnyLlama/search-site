@@ -55,9 +55,9 @@ export default {
             window.location.href = searchQuery
         })
 
-        changeHeaderByWidth()
+        responsiveChangeOfHeader()
         window.addEventListener("resize", () => responsiveChangeOfHeader())
 
-        responsiveChangeOfHeader()
+        randomSearchPlaceholder()
     }
 }
