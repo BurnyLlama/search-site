@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Searchy!</title>
-    <link rel="stylesheet" type="text/css" href="./assets/main.css">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <link rel="stylesheet" type="text/css" href="./styles/mobile.css">
 </head>
 <body>
     <nav>
@@ -45,50 +46,55 @@
         </h2>
 
         <form action="#" id="settings-theme">
-            <p>
+            <div class="settings-container">
                 <input type="radio" name="theme" id="light-theme" checked value="light">
                 <label for="light-theme">Light Theme</label>
-            </p>
+            </div>
 
-            <p>
+            <div class="settings-container">
                 <input type="radio" name="theme" id="dark-theme" value="dark">
                 <label for="dark-theme">Dark Theme</label>
-            </p>
+            </div>
         </form>
 
         <h2>
             Search Engine
         </h2>
         <form action="#" id="settings-search-engine">
-            <p>
+            <div class="settings-container">
                 <input type="radio" name="search-engine" id="search-engine-google" checked value="google">
                 <label for="search-engine-google">Google</label>
-            </p>
+            </div>
 
-            <p>
+            <div class="settings-container">
                 <input type="radio" name="search-engine" id="search-engine-ddg" value="ddg">
                 <label for="search-engine-ddg">Duck Duck Go</label>
-            </p>
+            </div>
 
-            <p>
+            <div class="settings-container">
                 <input type="radio" name="search-engine" id="search-engine-yahoo" value="yahoo">
                 <label for="search-engine-yahoo">Yahoo</label>
-            </p>
+            </div>
 
-            <p>
+            <div class="settings-container">
                 <input type="radio" name="search-engine" id="search-engine-bing" value="bing">
                 <label for="search-engine-bing">Bing</label>
-            </p>
+            </div>
 
-            <p>
+            <div class="settings-container">
                 <input type="radio" name="search-engine" id="search-engine-custom" value="custom">
                 <label for="search-engine-custom">
-                    Custom URL: <input type="text" id="search-engine-custom-url">
+                    Custom URL:
                 </label>
-            </p>
+            </div>
+            <div class="settings-container">
+                <input type="text" id="search-engine-custom-url">
+            </div>
         </form>
 
-        <button id="settings-save-btn">Save Settings</button>
+        <div class="settings-container">
+            <button id="settings-save-btn">Save Settings</button>
+        </div>
     </div>
 
     <div class="panel panel-left" id="about-panel" direction="left">
@@ -131,7 +137,8 @@
         </p>
     </div>
 
-    <img id="close-btn" src="./assets/close.svg" alt="x">
+    <img class="close-btn" id="close-btn-right" src="./assets/close.svg" alt="x">
+    <img class="close-btn" id="close-btn-left" src="./assets/close.svg" alt="x">
 
     <script src="./scripts/main.js" type="module"></script>
 </body>

@@ -21,7 +21,7 @@ function getSearchEngineURL(searchEngine) {
     }
 }
 
-async function randomSearchPlaceholder() {
+function randomSearchPlaceholder() {
     fetch("/assets/animals.json").then(response =>
         response.json()
     ).then(data => {
@@ -30,9 +30,15 @@ async function randomSearchPlaceholder() {
 
         setInterval(() => {
             const searchWord = data.animals[Math.floor(Math.random() * data.animals.length)]
-            document.querySelector("#searchbox").placeholder = `Want to search for ${searchWord.toLowerCase()}?`
+            document.querySelector("#searchbox").placeholder = `Search for ${searchWord.toLowerCase()}?`
         }, 2000)
     })
+}
+
+function responsiveChangeOfHeader() {
+    (window.innerWidth <= 900) ?
+        document.querySelector("#searchmsg").innerHTML = "Searching time?" :
+        document.querySelector("#searchmsg").innerHTML = "What do you want to search for today?"
 }
 
 export default {
@@ -49,12 +55,9 @@ export default {
             window.location.href = searchQuery
         })
 
-        window.addEventListener("resize", () =>
-            (window.innerWidth <= 900) ?
-            document.querySelector("#searchmsg").innerHTML = "Searching time?" :
-            document.querySelector("#searchmsg").innerHTML = "What do you want to search for today?"
-        )
+        changeHeaderByWidth()
+        window.addEventListener("resize", () => responsiveChangeOfHeader())
 
-        randomSearchPlaceholder()
+        responsiveChangeOfHeader()
     }
 }

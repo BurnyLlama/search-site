@@ -1,5 +1,3 @@
-import { closePanel } from "./panels.js";
-
 function setvar(variable, value) {
     document.documentElement.style
         .setProperty(`--${variable}`, value)
@@ -36,7 +34,6 @@ export default {
 
             localStorage.setItem("settings", JSON.stringify(settings))
 
-            closePanel()
             window.location.reload()
         })
     },

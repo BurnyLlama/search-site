@@ -1,24 +1,35 @@
 let activePanel = null
-let closeBtn = document.querySelector("#close-btn")
+const closeBtns = {
+    left: document.querySelector("#close-btn-left"),
+    right: document.querySelector("#close-btn-right")
+}
 
 function openPanel (panel, direction) {
     // Close any previous panels
-    closePanel()
+    closePanel(direction)
 
     // Open the new one
-    document.querySelector(panel).style.left = direction == "right" ? "60vw" : "0vw"
+    direction == "right" ?
+        document.querySelector(panel).style.right = "0" :
+        document.querySelector(panel).style.left = "0"
 
-    closeBtn.style.left = direction == "right" ? "57vw" : "39vw"
-    closeBtn.setAttribute("activePanel", document.querySelector(panel).id)
+    document.querySelector(`#close-btn-${direction}`).style.top = "5vh"
+
+    activePanel = panel
 }
 
-export function closePanel () {
-    activePanel = document.querySelector(`#${closeBtn.getAttribute("activePanel")}`)
+function closePanel () {
+    if (!activePanel)
+        return console.error("No active panel.")
 
-    if (activePanel)
-        activePanel.style.left = activePanel.getAttribute("direction") == "right" ? "110vw" : "-50vw"
+    const panel = document.querySelector(activePanel)
 
-    closeBtn.style.left = "110vw"
+    panel.getAttribute("direction") == "right" ?
+        panel.style.right = "-100%" : 
+        panel.style.left = "-100%"
+
+    closeBtns.left.style.top = "-100vh"
+    closeBtns.right.style.top = "-100vh"
 }
 
 export default {
@@ -29,6 +40,7 @@ export default {
             )
         )
 
-        closeBtn.addEventListener("click", closePanel)
+        document.querySelector("#close-btn-left").addEventListener("click", _ => closePanel())
+        document.querySelector("#close-btn-right").addEventListener("click", _ => closePanel())
     }
 }
