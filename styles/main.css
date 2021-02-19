@@ -154,6 +154,7 @@ main {
     box-shadow: 0 .3rem 1rem var(--shadow);
 
     font-size: 1.5rem;
+    font-weight: normal;
 
     color: white;
     background: linear-gradient(to right, #ff4b4b, #4b4bff);
@@ -273,6 +274,11 @@ a::after {
     right: 39vw;
 }
 
+#close-btn-game {
+    left: 48vw;
+    z-index: 6;
+}
+
 .settings-container {
     display: flex;
     align-self: center;
@@ -322,4 +328,22 @@ input[type=text]:focus {
 
 #settings-save-btn {
     margin: 1rem auto;
+}
+
+#pong-game {
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+
+    left: 0;
+    top: 100vh;
+    z-index: 5;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--shadow);
+
+    transition: top .5s;
 }
