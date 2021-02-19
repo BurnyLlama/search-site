@@ -13,3 +13,7 @@ It's a simple search page. That's it. You can find a live demo on [netlify](http
 * [x] Ability to use a custom search engine?
 * [x] Choose theme.
 * [x] Save settings/themes in "local storage"?
+
+# Extra features I might implement.
+* [x] Customize the colors (in the gradient).
+* [ ] Add an image as a background?
