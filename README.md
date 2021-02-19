@@ -17,3 +17,4 @@ It's a simple search page. That's it. You can find a live demo on [netlify](http
 # Extra features I might implement.
 * [x] Customize the colors (in the gradient).
 * [ ] Add an image as a background?
+* [ ] Add some utilites like calculator, to-do-list, etc. (Unlikely!)
