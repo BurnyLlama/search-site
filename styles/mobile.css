@@ -1,0 +1,67 @@
+@media screen and (max-width: 800px) {
+    body {
+        grid-template-areas: 'main' 'nav' 'footer';
+        grid-template-rows: 1fr max-content max-content;
+    }
+
+    .logo {
+        position: fixed;
+        width: 100vw;
+        height: auto;
+        bottom: 75vh;
+    }
+
+    nav {
+        background: transparent;
+        box-shadow: 0 0 0 transparent;
+    }
+
+    #settings-btn {
+        position: relative;
+        bottom: 2rem;
+
+        font-size: 1.25rem;
+
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    main {
+        justify-content: flex-end;
+        padding-bottom: 20vh;
+    }
+
+    #searchbox {
+        width: 90vw;
+    }
+
+    .panel {
+        width: 90vw;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        font-size: 1.5rem;
+    }
+
+    .panel > * {
+        width: 100%;
+    }
+
+    .close-btn {
+        width: 10vw;
+        height: 10vw;
+
+        padding: 3vw;
+        margin-top: 80vh;
+    }
+
+    #close-btn-left {
+        left: 75vw;
+    }
+    
+    #close-btn-right {
+        right: 15vw;
+    }
+}

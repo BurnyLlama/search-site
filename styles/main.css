@@ -1,7 +1,7 @@
 @import 'scaling.css';
 
 @font-face {
-    src: url('./Montserrat-Regular.ttf');
+    src: url('/assets/Montserrat-Regular.ttf');
     font-family: 'Montserrat';
 }
 
@@ -22,19 +22,26 @@
     --standout: #fff; /* #FFF */
     --text: #222; /* #222 */
     --shadow: #8888; /* #6668 */
+    /* -- */
+    --color1: #ff4b4b;
+    --color2: #4b4bff;
+    --gradient: linear-gradient(to right, var(--color1), var(--color2))
 }
 
 html, body {
     overflow-x: hidden;
+    background: var(--surface);
 }
 
 body {
     display: grid;
+    grid-template-areas: 'nav' 'main' 'footer';
     grid-template-rows: max-content 1fr max-content;
     height: 100vh;
 }
 
 nav {
+    grid-area: nav;
     display: flex;
     align-items: center;
     width: 100%;
@@ -46,7 +53,7 @@ nav {
 
 button {
     color: transparent;
-    background: linear-gradient(to right, #ff4b4b, #4b4bff);
+    background: var(--gradient);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
@@ -56,7 +63,8 @@ button {
     border: 0 transparent none;
     border-radius: .8rem .8rem .3rem .8rem;
 
-    font-size: 1rem;
+    font-size: 1em;
+    font-weight: bold;
 
     padding: .75rem 1.5rem;
 
@@ -67,11 +75,15 @@ button {
 
 button:active, button:focus, button:hover {
     color: white;
-    background: linear-gradient(to right, #ff4b4b, #4b4bff);
+    background: var(--gradient);
 }
 
 .logo {
     height: 4rem;
+}
+
+.logo > svg {
+    height: 100%;
 }
 
 #settings-btn {
@@ -80,6 +92,7 @@ button:active, button:focus, button:hover {
 }
 
 main {
+    grid-area: main;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,7 +115,7 @@ main {
     margin-bottom: 2rem;
 
     color: transparent;
-    background: linear-gradient(to right, #ff4b4b, #4b4bff);
+    background: var(--gradient);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
@@ -110,7 +123,7 @@ main {
 
 #searchbox {
     border: .1rem solid;
-    border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
+    border-image-source: var(--gradient);
     border-image-slice: 1;
 
     color: var(--text);
@@ -130,18 +143,18 @@ main {
 
 #searchbox:hover {
     border: .2rem solid;
-    border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
+    border-image-source: var(--gradient);
     border-image-slice: 1;
 
-    padding: .9rem;
+    padding: .85rem;
 }
 
 #searchbox:focus {
     border: .3rem solid;
-    border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
+    border-image-source: var(--gradient);
     border-image-slice: 1;
 
-    padding: .82rem;
+    padding: .75rem;
 }
 
 #searchbtn {
@@ -149,9 +162,10 @@ main {
     box-shadow: 0 .3rem 1rem var(--shadow);
 
     font-size: 1.5rem;
+    font-weight: normal;
 
     color: white;
-    background: linear-gradient(to right, #ff4b4b, #4b4bff);
+    background: var(--gradient);
 
     border-radius: 1rem 1rem .3rem 1rem;
 
@@ -166,6 +180,7 @@ main {
 }
 
 footer {
+    grid-area: footer;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -178,7 +193,7 @@ footer {
 
 a {
     color: transparent;
-    background: linear-gradient(to right, #ff4b4b, #4b4bff);
+    background: var(--gradient);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
@@ -194,7 +209,11 @@ a::after {
     bottom: 0;
     width: 104%;
     height: .1em;
-    background: linear-gradient(to right, #ff4b4b, #4b4bff);
+    background: var(--gradient);
+}
+
+.github {
+    font-weight: bold;
 }
 
 .panel {
@@ -205,7 +224,7 @@ a::after {
     box-shadow: 0 0 1rem var(--shadow);
 
     padding: 3vw;
-    font-size: .8rem;
+    font-size: 1rem;
 
     top: 0;
     width: 40vw;
@@ -215,11 +234,11 @@ a::after {
 }
 
 .panel-left {
-    left: -50vw;
+    left: -100%;
 }
 
 .panel-right {
-    left: 110vw;
+    right: -100%;
 }
 
 .panel h2, .panel h3 {
@@ -230,48 +249,69 @@ a::after {
     margin: .5em 0;
 }
 
-#close-btn {
+.close-btn {
     position: absolute;
     z-index: 4;
 
-    background: linear-gradient(to right, #ff4b4b, #4b4bff);
+    background: var(--gradient);
     border-radius: 100%;
     box-shadow: 0 .3rem 1rem var(--shadow);
 
-    top: 3vh;
-    left: 110vw;
+    top: -100vh;
+    right: 50vw;
 
     width: 4vw;
     height: 4vw;
 
     padding: 1vw;
 
-    transition: left .8s, transform .3s;
+    transition: top .5s, transform .3s;
 }
 
-#close-btn:hover {
+.close-btn:hover {
     cursor: pointer;
     transform: translateY(-.2rem);
     transition: .3s;
 }
 
-input[typr=radio] {
+#close-btn-left {
+    left: 39vw;
+}
+
+#close-btn-right {
+    right: 39vw;
+}
+
+#close-btn-game {
+    left: 48vw;
+    z-index: 6;
+}
+
+.settings-container {
+    display: flex;
+    align-self: center;
+    margin: .25rem 0;
+}
+
+input[type=radio] {
     background: #ff4b4b;
+    margin-right: .3rem;
 }
 
 input[type=text] {
     border: 0 transparent none;
     border-bottom: .1rem solid;
-    border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
+    border-image-source: var(--gradient);
     border-image-slice: 1;
 
     color: var(--text);
     background: var(--surface);
 
-    margin: 0 0 0 .5rem;
+    margin: .3rem 0 0 1rem;
     padding: .25rem .5rem;
+    font-size: 1em;
 
-    width: min(80%, 20vw);
+    width: 100%;
 
     outline: 0 transparent none;
 }
@@ -279,17 +319,53 @@ input[type=text] {
 input[type=text]:hover {
     border: 0 transparent none;
     border-bottom: .15rem solid;
-    border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
+    border-image-source: var(--gradient);
     border-image-slice: 1;
 
-    padding-bottom: .1rem;
+    padding-bottom: .2rem;
 }
 
 input[type=text]:focus {
     border: 0 transparent none;
     border-bottom: .2rem solid;
-    border-image-source: linear-gradient(to right, #ff4b4b, #4b4bff);
+    border-image-source: var(--gradient);
     border-image-slice: 1;
 
-    padding-bottom: .05rem;
+    padding-bottom: .15rem;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    margin-right: .5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
+#settings-save-btn, #settings-default-btn {
+    margin: 1rem auto;
+}
+
+#pong-game {
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+
+    left: 0;
+    top: 100vh;
+    z-index: 5;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--shadow);
+
+    transition: top .5s;
 }
